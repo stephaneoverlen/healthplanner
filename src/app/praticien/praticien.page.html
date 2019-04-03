@@ -1,0 +1,143 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title> -->
+      <!-- <img src="assets/img/header.png" alt="header" /> -->
+    <!-- </ion-title>
+  </ion-toolbar> -->
+<!-- 
+  <div class="searchBar">
+    <ion-searchbar placeholder="Recherche" animated showCancelButton debounce="0" (ionChange)="getItems($event)">
+    </ion-searchbar>
+  </div>
+</ion-header> -->
+
+<ion-content>
+  <ion-row>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label>code postal : {{ npa }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Physiothérapeute</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="7" class="praticien-body">
+      <!-- <div class="praticien-body"> -->
+      <ion-content padding>
+        <div class="centeredTitle">Composer mon parcours médical</div>
+        <div class="label">Sélectionnez un praticien</div>
+        <div class="filtersBloc">
+          <img src="https://img.icons8.com/material-outlined/24/000000/tags.png">
+          Filtrer par :
+          <span class="filters" *ngFor="let filter of filters">{{ filter }}</span>
+        </div>
+        <table height="2000">
+          <tr>
+            <td style="vertical-align: top;">
+              <ion-card class="auto-select-card" style="width: 90%;">
+                <ion-card-header class="auto-select-card-header">
+                  <ion-card-title>
+                    Physiothérapeute
+                    <span style="float: right;">Praticien</span><br>
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-button class="auto-select-button" expand="block">Sélectionnez-le pour moi automatiquement
+                  </ion-button>
+                </ion-card-content>
+              </ion-card>
+              <ion-card class="card" style="width: 90%;">
+                <ion-card-header class="card">
+                  <ion-card-title>
+                    Mes critères
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ul>
+                    <li style="font-size: x-large;">
+                      Date souhaitée :
+                      <ion-datetime value="2019-03-23" displayFormat="DD.MM.YYYY"
+                        style="width: 124px; border: 1px solid lightgrey; border-radius: 10px; position: relative; top: -37px; left: 140px;">
+                      </ion-datetime>
+                    </li>
+                    <li style="font-size: x-large;">
+                      Spécialités
+                    </li>
+                    <div *ngFor="let critere of criteres">
+                      <ion-checkbox slot="end" style="padding-top: 7px; margin-left: 5px; margin-right: 15px;">
+                      </ion-checkbox>
+                      <ion-label style="font-size: x-large;">{{ critere }}</ion-label><br>
+                    </div>
+                    <li style="font-size: x-large;">
+                      Langues
+                    </li>
+                    <ion-checkbox slot="end" style="padding-top: 7px; margin-left: 5px; margin-right: 15px;">
+                    </ion-checkbox>
+                    <ion-label style="font-size: x-large;">Homme</ion-label><br>
+                    <ion-checkbox slot="end" style="padding-top: 7px; margin-left: 5px; margin-right: 15px;">
+                    </ion-checkbox>
+                    <ion-label style="font-size: x-large;">Femme</ion-label><br>
+                    <li style="font-size: x-large;">
+                      <ion-checkbox slot="end" style="padding-top: 7px; margin-left: 5px; margin-right: 15px;">
+                      </ion-checkbox>
+                      <ion-label style="font-size: x-large;">Domicile</ion-label><br>
+                      <ion-checkbox slot="end" style="padding-top: 7px; margin-left: 5px; margin-right: 15px;">
+                      </ion-checkbox>
+                      <ion-label style="font-size: x-large;">Cabinet</ion-label><br>
+                    </li>
+                  </ul>
+                </ion-card-content>
+              </ion-card>
+            </td>
+            <td style="vertical-align: top;">
+              <a href="/deplacement">
+                <ion-card class="card" *ngFor="let praticien of resultArray" style="width: 90%;">
+                  <ion-card-header>
+                    <ion-card-title>
+                      {{ praticien.name }}
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      {{ praticien.title }}
+                    </ion-card-subtitle>
+                  </ion-card-header>
+
+                  <ion-card-content>
+                    <div style="display: inline-block; width: 150px; margin-right: 20px;">
+                      <div *ngFor="let workingField of praticien.workingFields">
+                        - {{ workingField }}
+                      </div>
+                    </div>
+                    <div style="display: inline-block; width: 220px;">
+                      <div>
+                        <table>
+                          <tr *ngFor="let score of praticien.scores">
+                            <td>
+                              {{ score[0] }}
+                            </td>
+                            <td>
+                              <ion-icon name="{{ score[1] }}"></ion-icon>
+                              <ion-icon name="{{ score[2] }}"></ion-icon>
+                              <ion-icon name="{{ score[3] }}"></ion-icon>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </ion-card-content>
+                  <!-- <ion-card-content>
+                    3
+                    <ion-icon name="chatbubbles"></ion-icon>
+                  </ion-card-content> -->
+                </ion-card>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </ion-content>
+      <!-- </div> -->
+    </ion-col>
+    <ion-col size="2" style="position: fixed; right: 400px; top: 166px;">
+      <img src="assets/img/horaires2.png" />
+    </ion-col>
+  </ion-row>
+</ion-content>

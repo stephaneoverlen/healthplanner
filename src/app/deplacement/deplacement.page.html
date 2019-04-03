@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <img src="assets/img/header.png" alt="header" />
+      </ion-title>
+    </ion-toolbar>
+  
+    <div class="searchBar">
+      <ion-searchbar placeholder="Recherche" animated showCancelButton debounce="0" (ionChange)="getItems($event)">
+      </ion-searchbar>
+    </div>
+  </ion-header>
+  
+<ion-content padding>
+  <div class="centeredTitle">Composer mon parcours médical</div>
+
+  <div class="label">
+    <a href="/praticien">Sélectionnez un praticien</a>
+    /
+    Moyen de déplacement
+  </div>
+  <ion-button class="auto-select-button" expand="block">Je peux me déplacer par mes propres moyens</ion-button>
+
+  <a href="/ordonnance">
+    <ion-card class="card" *ngFor="let transport of resultArray">
+      <ion-card-header>
+        <ion-card-title>
+          {{ transport.name }}
+          <span style="float: right;">Dans mes favoris <ion-icon name="star"></ion-icon></span><br>
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{ transport.type }}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <!-- <ion-card-content>
+        <ion-icon name="chatbubbles"></ion-icon>
+      </ion-card-content> -->
+    </ion-card>
+  </a>
+</ion-content>

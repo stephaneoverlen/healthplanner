@@ -1,0 +1,92 @@
+.auto-select-button {
+    margin-top: 20px;
+}
+
+.auto-select-card {
+    width: 45%;
+    background-color: aquamarine;
+    display: inline-block;
+}
+
+.auto-select-card-header {
+    background-color: aquamarine;
+}
+
+.body {
+  vertical-align: top;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.card {
+    width: 45%;
+    display: inline-block;
+}
+
+.centeredTitle {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.filters {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: gray;
+    color: white;
+}
+
+.filtersBloc {
+    margin-bottom: 15px;
+}
+
+.label {
+  width: 100%;
+  text-align: center;
+  margin: 20px;
+  color: grey;
+  font-size: x-large;
+}
+
+.menu {
+  vertical-align: top;
+  display: inline-block;
+  width: 200px;
+  height: 1080px;
+  margin: 5px;
+}
+
+.praticien-body {
+    height: 100%;
+    margin-left: 200px;
+    vertical-align:top;
+    position: fixed;
+}
+
+.searchBar {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+
+.side-menu {
+    border: 1px solid red;
+    // display: inline-block;
+    width: 200px;
+    vertical-align:top;
+    position: fixed;
+    top: 150px;
+    left: 0;
+}
+
+.side-menu-button {
+    height: 30px;
+    margin: 3px;
+    font-size: x-large;
+}

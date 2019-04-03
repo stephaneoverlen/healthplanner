@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="width: 400px; margin: auto; border: 1px solid lightgrey; border-radius: 10px; padding: 0 10px 10px 10px;">
+    <ion-item>
+      <ion-label position="floating">identifiant</ion-label>
+      <ion-input type="text" [(ngModel)]="identifiant" id="identifiant" selected ></ion-input>
+    </ion-item>
+    <ion-button class="auto-select-button" expand="block">Envoyer le code à votre téléphone</ion-button>
+
+    <ion-item>
+      <ion-label position="floating">Code reçu par SMS</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-button class="auto-select-button" expand="block" (click)="validate()">Valider</ion-button>
+  </div>
+</ion-content>

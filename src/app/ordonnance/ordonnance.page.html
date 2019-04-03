@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ordonnance</ion-title>
+  </ion-toolbar>
+
+  <div class="searchBar">
+    <ion-searchbar placeholder="Recherche" animated showCancelButton debounce="0" (ionChange)="getItems($event)">
+    </ion-searchbar>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div class="centeredTitle">Composer mon parcours médical</div>
+
+  <div class="label">
+    <a href="/praticien">Sélectionnez un praticien</a>
+    /
+    <a href="/deplacement">Moyen de déplacement</a>
+    /
+    Ordonnance
+  </div>
+
+  <i class="icon ion-ionic"></i>
+
+  <ion-item>
+    <ion-label position="floating" style="font-size: xx-large;">Nombre de séances nécessaires </ion-label>
+    <img src="assets/icon/minus.svg" style="width: 25px;" (click)="suppressionSeanceNecessaire()" />
+    <span name="seancesNecessaires" ngDefaultControl [(ngModel)]="seancesNecessaires"
+      style="font-size: xx-large; margin: 5px; height: 38px; width: 20px;">{{ seancesNecessaires }}</span>
+    <img src="assets/icon/plus.svg" style="width: 25px;" (click)="ajoutSeanceNecessaire()" />
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" style="font-size: xx-large;">Fréquence des séances </ion-label>
+    <img src="assets/icon/minus.svg" style="width: 25px;" (click)="suppressionFrequenceSeance()" />
+    <span name="frequenceSeances" ngDefaultControl [(ngModel)]="frequenceSeances"
+      style="font-size: xx-large; margin: 5px; height: 38px; width: 20px;">{{ frequenceSeances }}</span>
+    <img src="assets/icon/plus.svg" style="width: 25px;" (click)="ajoutFrequenceSeance()" />
+    <span style="font-size: xx-large;"> séances par semaine</span>
+  </ion-item>
+
+  <div>
+    <ion-label position="floating" style="font-size: xx-large;">À partir de quelle date ?</ion-label>
+    <ion-datetime style="font-size: xx-large;" displayFormat="MM/DD/YYYY" value="2002-09-23T15:03:46.789">
+    </ion-datetime>
+  </div>
+
+  <div>
+    <ion-label position="floating" style="font-size: xx-large;">Joindre l'ordonnance (optionnel)</ion-label>
+    <ion-button class="auto-select-button" expand="block" style="width: 200px;">Parcourir</ion-button>
+  </div>
+
+  <div>
+    <ion-button class="auto-select-button" expand="block" style="height: 80px; width: 220px; display: inline-block;">Je
+      souhaite prendre les<br> rendez-vous moi-même</ion-button>
+    <a href="/horaires">
+      <ion-button class="auto-select-button" expand="block" style="height: 80px; width: 220px; display: inline-block;">
+        Suivant</ion-button>
+    </a>
+  </div>
+</ion-content>

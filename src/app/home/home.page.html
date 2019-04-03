@@ -1,0 +1,146 @@
+<!-- Header de la page active (hors menu) -->
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> -->
+    <ion-title>
+      <!-- Home -->
+      <ion-row>
+        <ion-col size="10">
+          <img src="assets/img/logo.svg" alt="header" height="54px" />
+        </ion-col>
+        <ion-col size="2">
+          <ion-button (click)="authenticate()">
+            Mon compte
+            <ion-icon slot="end" name="log-in"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="searchBar">
+    <ion-searchbar placeholder="Rechercher" animated showCancelButton debounce="0" (ionChange)="getItems($event)">
+    </ion-searchbar>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let result of resultArray" class="arrayResult" (click)="testtest()">
+      <img class="thumbnail" src="assets/img/{{result[1].icon}}.png">
+      <div class="puces">
+        <ul>
+          <li class="firstTitle">{{ result[1].firstTitle }}</li>
+          <li class="secondTitle">{{ result[1].secondTitle }}</li>
+          <li class="activityName">{{ result[0] }}</li>
+        </ul>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-col size="4">
+      <ion-card class="card">
+        <img src="assets/img/soins.jpg" (click)="showHideButtons()">
+        <ion-card-header class="hydrated">
+          <ion-card-title role="heading" aria-level="2" class="hydrated">Soins</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content card-content-ios hydrated">
+          Recherchez des professionnels pour vos soins à domicile ou
+          en cabinet.
+          <ion-list *ngIf="this.chooseTypeClicked === true">
+            <ul>
+              <li>
+                <a href="/informations">
+                  Infirmière
+                </a>
+              </li>
+              <li>
+                <a href="/informations">
+                  Physiothérapeute
+                </a>
+              </li>
+              <li>Ergothérapeute</li>
+              <li>Pharmacie</li>
+              <li>Soin paliatifs et douleur</li>
+            </ul>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-card class="card">
+        <img src="assets/img/domicile.jpg">
+        <ion-card-header class="hydrated">
+          <ion-card-title role="heading" aria-level="2" class="hydrated">Services à domicile</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content card-content-ios hydrated">
+          Recherchez des professionnels pour vos soins à domicile ou
+          en cabinet.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+
+    <ion-col size="4">
+      <ion-card class="card">
+        <img src="assets/img/accompagnement.jpg">
+        <ion-card-header class="hydrated">
+          <ion-card-title role="heading" aria-level="2" class="hydrated">Accueil accompagnement</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content card-content-ios hydrated">
+          Recherchez des professionnels pour vos soins à domicile ou
+          en cabinet.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+
+    <ion-col size="4">
+      <ion-card class="card">
+        <img src="assets/img/examen.jpg">
+        <ion-card-header class="hydrated">
+          <ion-card-title role="heading" aria-level="2" class="hydrated">Examens</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content card-content-ios hydrated">
+          Recherchez des professionnels pour vos soins à domicile ou
+          en cabinet.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+
+    <ion-col size="4">
+      <ion-card class="card">
+        <img src="assets/img/transport.jpg">
+        <ion-card-header class="hydrated">
+          <ion-card-title role="heading" aria-level="2" class="hydrated">Transports</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content card-content-ios hydrated">
+          Recherchez des professionnels pour vos soins à domicile ou
+          en cabinet.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-card class="card">
+        <img src="assets/img/enfant.jpg">
+        <ion-card-header class="hydrated">
+          <ion-card-title role="heading" aria-level="2" class="hydrated">Enfants</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="card-content card-content-ios hydrated">
+          Recherchez des professionnels pour vos soins à domicile ou
+          en cabinet.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+
+  </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>horaires</ion-title>
+  </ion-toolbar>
+
+  <div class="searchBar">
+    <ion-searchbar placeholder="Recherche" animated showCancelButton debounce="0" (ionChange)="getItems($event)">
+    </ion-searchbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="centeredTitle">Composer mon parcours médical</div>
+  <div class="label">
+    <a href="/praticien">Sélectionnez un praticien</a>
+    /
+    <a href="/deplacement">Moyen de déplacement</a>
+    /
+    <a href="/ordonnance">Ordonnance</a>
+    /
+    Horaires
+  </div>
+
+  <div style="margin: auto; width: 600px; text-align: center;">
+    <ion-button class="auto-select-button" expand="block"
+      style="margin: auto; margin-bottom: 20px; width: 180px; height: 80px; font-size:medium;">Je souhaite prendre
+      les<br>rendez-vous moi-même</ion-button>
+
+    <ion-list>
+      <span *ngFor="let entry of days" style="font-size: xx-large;">
+        <ion-label>{{entry}}</ion-label>
+        <ion-checkbox slot="end" style="margin-left: 5px; margin-right: 15px;"></ion-checkbox>
+      </span>
+    </ion-list>
+
+    <span style="font-size: x-large;">Horaires de préférence (optionnel)</span>
+
+    <div style="width: 190px; margin: auto;">
+      <ion-item>
+        <span>De </span>
+        <ion-datetime value="00:00" displayFormat="HH:mm"></ion-datetime>
+        <span style="margin-left: 15px;"> à </span>
+        <ion-datetime value="00:00" displayFormat="HH:mm"></ion-datetime>
+      </ion-item>
+    </div>
+    <img src="assets/icon/plus.svg" style="width: 25px; position: relative; top: 8px; margin: 4px;" />
+    <span style="font-size: xx-large; margin-bottom: 10px;">Ajouter un créneau</span>
+
+    <ion-item>
+      <a href="/finalisation" style="margin: auto;">
+        <ion-button class="auto-select-button" expand="block">Suivant</ion-button>
+      </a>
+    </ion-item>
+  </div>
+</ion-content>

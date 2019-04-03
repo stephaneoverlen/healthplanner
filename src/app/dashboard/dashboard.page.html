@@ -1,0 +1,262 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-label style="font-size: xx-large;">Itinéraire clinique PTG pour patient âgé</ion-label>
+  <ion-button (click)="save()" style="margin-left: 300px;">Sauvegarder</ion-button>
+  <ion-button (click)="sendSMS()">Envoyer par SMS</ion-button>
+  <ion-button (click)="sendMail()">Envoyer par mail</ion-button>
+  <br>
+  <ion-card style="width: 45%; height: 250px; display: inline-block;">
+    <ion-card-header color="warning">
+      <ion-card-title>Information Patient</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content style="margin-top: 10px;">
+      <table>
+        <tr>
+          <td>
+            <ion-icon name="contact"></ion-icon>
+            John Doe
+          </td>
+          <td>
+            <span
+              style="margin-left: 100px; margin-right: 15px; position: relative; top: -13px; display: inline-block;">Date
+              de sortie</span>
+            <ion-datetime displayFormat="MM/DD/YYYY" value="2002-09-23T15:03:46.789"
+              style="position: relative; top: 3px; display: inline-block; width: 150px; border: 1px solid lightgrey; border-radius: 5px;">
+            </ion-datetime>
+            <ion-icon name="calendar" style="font-size: 30px; position: relative; bottom: 7px; right: 45px;">
+            </ion-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <ion-icon name="phone-portrait"></ion-icon>
+            +41 76 123 4562
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <ion-icon name="mail" style="margin-top: 15px;"></ion-icon>
+            john.doe@gmail.com
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="width: 45%; height: 250px; display: inline-block;">
+    <ion-card-header color="danger">
+      <ion-card-title>Commentaire</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content style="margin-top: 15px;">
+      <textarea placeholder="Entrez votre commentaire" rows="7" cols="70"></textarea>
+    </ion-card-content>
+  </ion-card>
+  <ion-item style="font-weight: bold;">Composition du programme</ion-item>
+  <ion-card style="display: inline-block; width: 220px; height: 200px;">
+    <ion-card-header color="success">
+      <ion-card-title>Physiothérapie</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table>
+        <tr>
+          <td>
+            <ion-list>
+              <ion-list-header>Nombre de séances</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">6</ion-select-option>
+                  <ion-select-option value="brown">1</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+          <td>
+            <ion-list>
+              <ion-list-header>Fréquence par semaine</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">1</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="display: inline-block; width: 220px; height: 200px;">
+    <ion-card-header color="success">
+      <ion-card-title>Ergothérapie</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table>
+        <tr>
+          <td>
+            <ion-list>
+              <ion-list-header>Nombre de séances</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">8</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+          <td>
+            <ion-list>
+              <ion-list-header>Fréquence par semaine</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">3</ion-select-option>
+                  <ion-select-option value="brown">1</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+  <!-- primary", "secondary", "tertiary", "success", "warning", "danger", "light", "medium", and "dark -->
+  <ion-card style="display: inline-block; width: 220px; height: 200px;">
+    <ion-card-header color="success">
+      <ion-card-title>Soin infirmier</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table>
+        <tr>
+          <td>
+            <ion-list>
+              <ion-list-header>Nombre de séances</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">4</ion-select-option>
+                  <ion-select-option value="brown">1</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+          <td>
+            <ion-list>
+              <ion-list-header>Fréquence par semaine</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">1</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="display: inline-block; width: 220px; height: 200px;">
+    <ion-card-header color="success">
+      <ion-card-title>Aide au ménage</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table>
+        <tr>
+          <td>
+            <ion-list>
+              <ion-list-header>Nombre de séances</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">2</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+          <td>
+            <ion-list>
+              <ion-list-header>Fréquence par semaine</ion-list-header>
+              <ion-item>
+                <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="brown">1</ion-select-option>
+                  <ion-select-option value="blonde">2</ion-select-option>
+                  <ion-select-option value="black">3</ion-select-option>
+                  <ion-select-option value="red">4</ion-select-option>
+                  <ion-select-option value="brown">5</ion-select-option>
+                  <ion-select-option value="blonde">6</ion-select-option>
+                  <ion-select-option value="black">7</ion-select-option>
+                  <ion-select-option value="red">8</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="display: inline-block; width: 220px; height: 200px;">
+    <ion-card-header>
+      <ion-card-title>Ajouter</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-icon name="add-circle-outline" style="font-size: 30px;"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+  <ion-item style="font-weight: bold;">Documentations</ion-item>
+  <img src="assets/img/documentations.png" />
+</ion-content>
